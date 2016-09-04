@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'profile-component',
-    templateUrl: 'profile.component.html',
+    selector: 'sidebar-component',
+    templateUrl: 'sidebar.component.html'
 })
-export class ProfileComponent implements OnInit {
+export class SidebarComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'profile-component',
-    templateUrl: 'profile.component.html',
+    selector: 'footer-component',
+    templateUrl: 'footer.component.html'
 })
-export class ProfileComponent implements OnInit {
+export class FooterComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }

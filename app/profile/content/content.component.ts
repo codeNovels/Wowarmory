@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'profile-component',
-    templateUrl: 'profile.component.html',
+    selector: 'content-component',
+    templateUrl: 'content.component.html'
 })
-export class ProfileComponent implements OnInit {
+export class ContentComponent implements OnInit {
     constructor() { }
-
+ 
     ngOnInit() { }
 }
