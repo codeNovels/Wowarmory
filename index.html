@@ -1,30 +1,47 @@
 <html>
-  <head>
-    <title>wow-armory</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/lightbox.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/wow.css">
 
-    <link rel="stylesheet" href="css/character/pet.css">
-    <link rel="stylesheet" href="css/character/summary.css">
+<head>
+  <title>wow-armory</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
+  <link rel="stylesheet" href="css/local-common/css/common-game-site.css">
+  <link rel="stylesheet" href="css/wow.css">
+  <link rel="stylesheet" href="css/nav-client/nav-client-desktop.css">
+  <link rel="stylesheet" href="css/lightbox.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/wiki/zone.css">
+  <link rel="stylesheet" href="css/character/summary.css">
+  <link rel="stylesheet" href="css/character/pet.css">
+  <link rel="stylesheet" href="css/legal/ratings.css">
 
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <style type="text/css">
+    #content .content-top {
+      background: url("/wow/static/images/character/summary/backgrounds/race/10.jpg") left top no-repeat;
+    }
+    
+    .profile-wrapper {
+      background-image: url("http://render-api-us.worldofwarcraft.com/static-render/us/uther/147/111745683-profilemain.jpg?alt=/wow/static/images/2d/profilemain/race/10-0.jpg");
+    }
+  </style>
 
-    <script src="systemjs.config.js"></script>
-    <script>
+
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
-  </head>
+</head>
 
-  <body>
-    <my-app>Loading...</my-app>
-  </body>
+<body class="en-us without-nav" cz-shortcut-listen="true">
+  <my-app>Loading...</my-app>
+</body>
+
 </html>
