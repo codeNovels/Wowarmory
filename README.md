@@ -1,1 +1,1 @@
-![Picture](https://github.com/codeNovels/wowarmory/blob/master/images/readMe.PNG)
+![Picture](https://github.com/codeNovels/Wowarmory/blob/master/images/ReadMe.PNG)
