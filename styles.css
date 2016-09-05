@@ -1,0 +1,53 @@
+.slot-head {
+    left: 0px; top: 0px;
+}
+.slot-neck{
+    left: 0px; top: 58px;
+}
+.slot-shoulder{
+left: 0px; top: 116px;
+}
+.slot-back{
+left: 0px; top: 174px;
+}
+.slot-chest{
+left: 0px; top: 232px;
+}
+.slot-shirt{
+left: 0px; top: 290px;
+}
+.slot-tabard{
+left: 0px; top: 348px;
+}
+.slot-wrist{
+    left: 0px; top: 406px;
+}
+.slot-hands{
+    top: 0px; right: 0px;
+}
+.slot-waist{
+     top: 58px; right: 0px;
+}
+.slot-legs{
+     top: 116px; right: 0px;
+}
+.slot-feet{
+    top: 174px; right: 0px;
+}
+.slot-finger1{
+    top: 232px; right: 0px;
+}
+.slot-finger2{
+    top: 290px; right: 0px;
+}
+.slot-trinket1{
+    top: 348px; right: 0px;}
+.slot-trinket2{
+    top: 406px; right: 0px;
+}
+.slot-mainHand{
+    left: 132.5px; bottom: 0px;
+}
+.slot-offHand{
+      left: 409.5px; bottom: 0px;
+}

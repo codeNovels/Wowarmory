@@ -26,8 +26,8 @@ export class AppComponent {
 
     getInventory() {
         this.profileService.getItems()
-            .subscribe(res => {
-                this.items = res;
+            .subscribe(data => {
+                this.items = data.items;
             })
     }
 }

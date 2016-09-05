@@ -1,34 +1,34 @@
-    <div class="summary-top">
-        <div class="summary-top-right">
-            <ul class="profile-view-options" id="profile-view-options-summary">
-                <li class="current">
-                    <a href="/wow/en/character/uther/Swifty/advanced" rel="np" class="advanced">
+<div class="summary-top">
+    <div class="summary-top-right">
+        <ul class="profile-view-options" id="profile-view-options-summary">
+            <li class="current">
+                <a href="/wow/en/character/uther/Swifty/advanced" rel="np" class="advanced">
 					Advanced
 				</a>
-                </li>
-                <li>
-                    <a href="/wow/en/character/uther/Swifty/simple" rel="np" class="simple">
+            </li>
+            <li>
+                <a href="/wow/en/character/uther/Swifty/simple" rel="np" class="simple">
 					Simple
 				</a>
-                </li>
-            </ul>
+            </li>
+        </ul>
 
 
-            <div class="summary-averageilvl">
-                <div class="rest">
-                    Average item level<br /> (
-                    <span class="equipped">517</span> Equipped)
-                </div>
-                <div id="summary-averageilvl-best" class="best tip" data-id="averageilvl">
-                    521
-                </div>
+        <div class="summary-averageilvl">
+            <div class="rest">
+                Average item level<br /> (
+                <span class="equipped">517</span> Equipped)
             </div>
-
+            <div id="summary-averageilvl-best" class="best tip" data-id="averageilvl">
+                521
+            </div>
         </div>
 
-        <div class="summary-top-inventory">
-            <div id="summary-inventory" class="summary-inventory summary-inventory-advanced">
-                <div data-id="0" data-type="1" class="slot slot-1 item-quality-4" style=" left: 0px; top: 0px;">
+    </div>
+
+    <div class="summary-top-inventory" *ngIf="items">
+        <div id="summary-inventory" class="summary-inventory summary-inventory-advanced">
+            <!--<div data-id="0" data-type="1" class="slot slot-1 item-quality-4" style=" left: 0px; top: 0px;">
                     <div class="slot-inner">
                         <div class="slot-contents">
                             <a href="/wow/en/item/114230/trade-skill" class="item" data-item="d=99&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=227,525,534"><img src="http://media.blizzard.com/wow/icons/56/inv_plate_draenorcrafted_d_01helm.jpg" alt=""
@@ -43,171 +43,20 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div data-id="1" data-type="2" class="slot slot-2 item-quality-3" style=" left: 0px; top: 58px;">
+                </div>-->
+            <div *ngFor="let slot of slots; let i = index">
+                <div *ngIf="items[slot.name]" data-id="10" data-type="11" [ngClass]="i < 8 || i === 17? '' : 'slot-align-right'" class="slot slot-1 item-quality-{{items[slot.name].quality}} slot-{{slot.name}}">
                     <div class="slot-inner">
                         <div class="slot-contents">
-                            <a href="/wow/en/item/113736/dungeon-normal" class="item" data-item="pl=100&amp;cc=1&amp;bl=127"><img src="http://media.blizzard.com/wow/icons/56/inv_jewelry_amulet_03.jpg" alt="" /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Rumbling Mountain Choker of the Feverflare</span>
-                                <span class="name color-q3">
-								<a href="/wow/en/item/113736/dungeon-normal" data-item="pl=100&amp;cc=1&amp;bl=127">Rumbling Mountain Choker of the Feverflare</a>
-							</span>
-                                <span class="level">390</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="2" data-type="3" class="slot slot-3 item-quality-4" style=" left: 0px; top: 116px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/114231/trade-skill" class="item" data-item="d=97&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=136,525,533"><img src="http://media.blizzard.com/wow/icons/56/inv_plate_draenorcrafted_d_01shoulder.jpg" alt=""
-                                /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Truesteel Pauldrons of the Fireflash</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/114231/trade-skill" data-item="d=97&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=136,525,533">Truesteel Pauldrons of the Fireflash</a>
-							</span>
-                                <span class="level">640</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="14" data-type="16" class="slot slot-16 item-quality-7" style=" left: 0px; top: 174px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/122260" class="item" data-item="e=4087&amp;pl=100&amp;cc=0&amp;bl=582"><img src="http://media.blizzard.com/wow/icons/56/inv_misc_cape_19.jpg" alt="" /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Worn Stoneskin Gargoyle Cape</span>
-                                <span class="name color-q7">
-								<a href="/wow/en/item/122260" data-item="e=4087&amp;pl=100&amp;cc=0&amp;bl=582">Worn Stoneskin Gargoyle Cape</a>
-							</span>
-                                <span class="enchant-shadow">
-									Critical Strike
-								</span>
-                                <div class="enchant color-q2">
-                                    <a href="/wow/en/item/52764">Critical Strike</a>
-                                </div>
-                                <span class="level">463</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="4" data-type="5" class="slot slot-5 item-quality-4" style=" left: 0px; top: 232px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/114232/trade-skill" class="item" data-item="d=160&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=115,525,533"><img src="http://media.blizzard.com/wow/icons/56/inv_plate_draenorcrafted_d_01chest.jpg" alt=""
-                                /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Truesteel Breastplate of the Feverflare</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/114232/trade-skill" data-item="d=160&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=115,525,533">Truesteel Breastplate of the Feverflare</a>
-							</span>
-                                <span class="level">640</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="3" data-type="4" class="slot slot-4 item-quality-2" style=" left: 0px; top: 290px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/4332" class="item" data-item="s=1188630893&amp;t=3428&amp;pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_shirt_yellow_01.jpg" alt="" /><span class="frame"></span></a>
-
-                            <a class="transmog-frame" data-item="t=3428&amp;cc=0" href="/wow/en/item/3428"></a>
-                            <div class="details">
-                                <span class="name-shadow">Bright Yellow Shirt</span>
-                                <span class="name color-q2">
-								<a href="/wow/en/item/4332" data-item="s=1188630893&amp;t=3428&amp;pl=100&amp;cc=0&amp;bl">Bright Yellow Shirt</a>
-							</span>
-                                <span class="level">1</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="18" data-type="19" class="slot slot-19 item-quality-2" style=" left: 0px; top: 348px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/65906" class="item" data-item="pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_misc_tabard_guardiansofhyjal.jpg" alt=""
-                                /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Tabard of the Guardians of Hyjal</span>
-                                <span class="name color-q2">
-								<a href="/wow/en/item/65906" data-item="pl=100&amp;cc=0&amp;bl">Tabard of the Guardians of Hyjal</a>
-							</span>
-                                <span class="level">85</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="8" data-type="9" class="slot slot-9 item-quality-4" style=" left: 0px; top: 406px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/101799" class="item" data-item="r=-347&amp;s=1611268147&amp;d=54&amp;u=491&amp;pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_bracer_plate_reputation_c_01.jpg" alt=""
-                                /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Cliffbreaker Vambraces of the Savant</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/101799" data-item="r=-347&amp;s=1611268147&amp;d=54&amp;u=491&amp;pl=100&amp;cc=0&amp;bl">Cliffbreaker Vambraces of the Savant</a>
-							</span>
-                                <span class="level">496</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="9" data-type="10" class="slot slot-10 slot-align-right item-quality-3" style=" top: 0px; right: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/87308/quest-reward" class="item" data-item="d=48&amp;pl=100&amp;cc=11&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_glove_plate_panda_b_01.jpg" alt="" />
-                                <span
-                                    class="frame"></span>
+                            <a class="item"><img src="http://media.blizzard.com/wow/icons/56/{{items[slot.name].icon}}.jpg" alt="" />
+                                <span class="frame"></span>
                             </a>
-
                             <div class="details">
-                                <span class="name-shadow">Partycrasher's Gauntlets</span>
-                                <span class="name color-q3">
-								<a href="/wow/en/item/87308/quest-reward" data-item="d=48&amp;pl=100&amp;cc=11&amp;bl">Partycrasher's Gauntlets</a>
+                                <span class="name-shadow">{{items[slot.name].name}}</span>
+                                <span class="name color-q{{items[slot.name].quality}}">
+								<a>{{items[slot.name].name}}</a>
 							</span>
-                                <span class="level">410</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="5" data-type="6" class="slot slot-6 slot-align-right item-quality-3" style=" top: 58px; right: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/124594/dungeon-normal" class="item" data-item="u=529&amp;pl=100&amp;cc=1&amp;bl=161,647,652"><img src="http://media.blizzard.com/wow/icons/56/inv_plate_draenorlfr_c_01belt.jpg" alt="" />
-                                <span
-                                    class="frame"></span>
-                            </a>
-
-                            <div class="details">
-                                <span class="name-shadow">Felbane Girdle of the Aurora</span>
-                                <span class="name color-q3">
-								<a href="/wow/en/item/124594/dungeon-normal" data-item="u=529&amp;pl=100&amp;cc=1&amp;bl=161,647,652">Felbane Girdle of the Aurora</a>
-							</span>
-                                <span class="level">650</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="6" data-type="7" class="slot slot-7 slot-align-right item-quality-4" style=" top: 116px; right: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/101794" class="item" data-item="r=-465&amp;s=1236795483&amp;d=119&amp;u=491&amp;pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_pants_plate_reputation_c_01.jpg" alt=""
-                                /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Cliffbreaker Legplates of the Impatient</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/101794" data-item="r=-465&amp;s=1236795483&amp;d=119&amp;u=491&amp;pl=100&amp;cc=0&amp;bl">Cliffbreaker Legplates of the Impatient</a>
-							</span>
-                                <span class="level">496</span>
+                                <span class="level">{{items[slot.name].itemLevel}}</span>
                                 <span class="sockets">
 	                            <span class="icon-socket socket-type-7">
 			                    <span class="empty"></span>
@@ -218,122 +67,10 @@
                         </div>
                     </div>
                 </div>
-                <div data-id="7" data-type="8" class="slot slot-8 slot-align-right item-quality-4" style=" top: 174px; right: 0px;">
+                <div *ngIf="!items[slot.name]" data-id="0" data-type="1" [ngClass]="i < 8 || i === 17? '' : 'slot-align-right'" class="slot slot-{{slot.id}} slot-{{slot.name}}">
                     <div class="slot-inner">
                         <div class="slot-contents">
-                            <a href="/wow/en/item/101797" class="item" data-item="r=-348&amp;s=1545076804&amp;d=79&amp;u=491&amp;pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_boot_plate_reputation_c_01.jpg" alt="" />
-                                <span
-                                    class="frame"></span>
-                            </a>
-
-                            <div class="details">
-                                <span class="name-shadow">Cliffbreaker Sabatons of the Impatient</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/101797" data-item="r=-348&amp;s=1545076804&amp;d=79&amp;u=491&amp;pl=100&amp;cc=0&amp;bl">Cliffbreaker Sabatons of the Impatient</a>
-							</span>
-                                <span class="level">496</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="10" data-type="11" class="slot slot-11 slot-align-right item-quality-4" style=" top: 232px; right: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/77110" class="item" data-item="pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_jewelry_ring_ahnqiraj_06.jpg" alt="" />
-                                <span
-                                    class="frame"></span>
-                            </a>
-
-                            <div class="details">
-                                <span class="name-shadow">Ring of Torn Flesh</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/77110" data-item="pl=100&amp;cc=0&amp;bl">Ring of Torn Flesh</a>
-							</span>
-                                <span class="level">397</span>
-                                <span class="sockets">
-	                            <span class="icon-socket socket-type-7">
-			                    <span class="empty"></span>
-                                <span class="frame"></span>
-                                </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="11" data-type="11" class="slot slot-11 slot-align-right item-quality-4" style=" top: 290px; right: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/71330" class="item" data-item="s=-1895550848&amp;pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_misc_bag_28_halloween.jpg" alt="" />
-                                <span
-                                    class="frame"></span>
-                            </a>
-
-                            <div class="details">
-                                <span class="name-shadow">Seal of the Petrified Pumpkin</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/71330" data-item="s=-1895550848&amp;pl=100&amp;cc=0&amp;bl">Seal of the Petrified Pumpkin</a>
-							</span>
-                                <span class="level">365</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="12" data-type="12" class="slot slot-12 slot-align-right item-quality-7" style=" top: 348px; right: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/122361" class="item" data-item="pl=100&amp;cc=0&amp;bl=582"><img src="http://media.blizzard.com/wow/icons/56/inv_jewelry_talisman_01.jpg" alt="" />
-                                <span
-                                    class="frame"></span>
-                            </a>
-
-                            <div class="details">
-                                <span class="name-shadow">Swift Hand of Justice</span>
-                                <span class="name color-q7">
-								<a href="/wow/en/item/122361" data-item="pl=100&amp;cc=0&amp;bl=582">Swift Hand of Justice</a>
-							</span>
-                                <span class="level">463</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="13" data-type="12" class="slot slot-12 slot-align-right item-quality-7" style=" top: 406px; right: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/128318" class="item" data-item="pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/spell_priest_voidtendrils.jpg" alt="" />
-                                <span
-                                    class="frame"></span>
-                            </a>
-
-                            <div class="details">
-                                <span class="name-shadow">Touch of the Void</span>
-                                <span class="name color-q7">
-								<a href="/wow/en/item/128318" data-item="pl=100&amp;cc=0&amp;bl">Touch of the Void</a>
-							</span>
-                                <span class="level">605</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="15" data-type="21" class="slot slot-21 slot-align-right item-quality-3" style=" left: 132.5px; bottom: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/116116" class="item" data-item="d=93&amp;pl=100&amp;cc=0&amp;bl"><img src="http://media.blizzard.com/wow/icons/56/inv_sword_2h_draenorquest95_b_01.jpg" alt=""
-                                /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Blazegrease Greatsword</span>
-                                <span class="name color-q3">
-								<a href="/wow/en/item/116116" data-item="d=93&amp;pl=100&amp;cc=0&amp;bl">Blazegrease Greatsword</a>
-							</span>
-                                <span class="level">563</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-id="16" data-type="22" class="slot slot-22" style=" left: 409.5px; bottom: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="javascript:;" class="empty"><span class="frame"></span></a>
+                            <a class="empty"><span class="frame"></span></a>
                         </div>
                     </div>
                 </div>

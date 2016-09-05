@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'profile.component.html',
 })
 export class ProfileComponent implements OnInit {
+    @Input() items: Array<any>;
+
     constructor() { }
 
     ngOnInit() { }

@@ -3,10 +3,11 @@
 <div id="wrapper">
     <!--<header-component></header-component>-->
     <div id="header">
-        <div class="search-bar">TEST -- {{items}}
+        <div class="search-bar">
             <form action="/wow/en/search" method="get" autocomplete="off">
                 <div>
-                    <div class="ui-typeahead-ghost"><input type="text" value="" autocomplete="off" readonly="readonly" class="search-field input input-ghost" />
+                    <div class="ui-typeahead-ghost"><input type="text" value="" autocomplete="off" readonly="readonly" class="search-field input input-ghost"
+                        />
                         <input type="search" [(ngModel)]="realm" class="search-field input" name="q" id="search-field" maxlength="200" tabindex="40"
                             alt="Search characters, items, forums and more…" placeholder="Search characters..." /></div>
                     <input type="submit" class="search-button" value="" tabindex="41" />
@@ -51,6 +52,6 @@
 
 
 
-    <profile-component></profile-component>
+    <profile-component [items]="items"></profile-component>
     <footer-component></footer-component>
 </div>
