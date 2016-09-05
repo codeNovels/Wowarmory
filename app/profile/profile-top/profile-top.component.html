@@ -1,34 +1,29 @@
 <div class="summary-top">
-    <div class="summary-top-right">
-        <ul class="profile-view-options" id="profile-view-options-summary">
-            <li class="current">
-                <a href="/wow/en/character/uther/Swifty/advanced" rel="np" class="advanced">
+	<div class="summary-top-right">
+		<ul class="profile-view-options" id="profile-view-options-summary">
+			<li class="current">
+				<a rel="np" class="advanced">
 					Advanced
 				</a>
-            </li>
-            <li>
-                <a href="/wow/en/character/uther/Swifty/simple" rel="np" class="simple">
-					Simple
-				</a>
-            </li>
-        </ul>
+			</li>
+		</ul>
 
 
-        <div class="summary-averageilvl">
-            <div class="rest">
-                Average item level<br /> (
-                <span class="equipped">517</span> Equipped)
-            </div>
-            <div id="summary-averageilvl-best" class="best tip" data-id="averageilvl">
-                521
-            </div>
-        </div>
+		<div class="summary-averageilvl">
+			<div class="rest" style="color: #ccc">
+				Average item level<br /> (
+				<span class="equipped">517</span> Equipped)
+			</div>
+			<div id="summary-averageilvl-best" class="best tip" data-id="averageilvl">
+				521
+			</div>
+		</div>
 
-    </div>
+	</div>
 
-    <div class="summary-top-inventory" *ngIf="items">
-        <div id="summary-inventory" class="summary-inventory summary-inventory-advanced">
-            <!--<div data-id="0" data-type="1" class="slot slot-1 item-quality-4" style=" left: 0px; top: 0px;">
+	<div class="summary-top-inventory" *ngIf="items">
+		<div id="summary-inventory" class="summary-inventory summary-inventory-advanced">
+			<!--<div data-id="0" data-type="1" class="slot slot-1 item-quality-4" style=" left: 0px; top: 0px;">
                     <div class="slot-inner">
                         <div class="slot-contents">
                             <a href="/wow/en/item/114230/trade-skill" class="item" data-item="d=99&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=227,525,534"><img src="http://media.blizzard.com/wow/icons/56/inv_plate_draenorcrafted_d_01helm.jpg" alt=""
@@ -44,39 +39,75 @@
                         </div>
                     </div>
                 </div>-->
-            <div *ngFor="let slot of slots; let i = index">
-                <div *ngIf="items[slot.name]" data-id="10" data-type="11" [ngClass]="i < 8 || i === 17? '' : 'slot-align-right'" class="slot slot-1 item-quality-{{items[slot.name].quality}} slot-{{slot.name}}">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a class="item"><img src="http://media.blizzard.com/wow/icons/56/{{items[slot.name].icon}}.jpg" alt="" />
-                                <span class="frame"></span>
-                            </a>
-                            <div class="details">
-                                <span class="name-shadow">{{items[slot.name].name}}</span>
-                                <span class="name color-q{{items[slot.name].quality}}">
-								<a>{{items[slot.name].name}}</a>
-							</span>
-                                <span class="level">{{items[slot.name].itemLevel}}</span>
-                                <span class="sockets">
-	                            <span class="icon-socket socket-type-7">
-			                    <span class="empty"></span>
-                                <span class="frame"></span>
-                                </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div *ngIf="!items[slot.name]" data-id="0" data-type="1" [ngClass]="i < 8 || i === 17? '' : 'slot-align-right'" class="slot slot-{{slot.id}} slot-{{slot.name}}">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a class="empty"><span class="frame"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <script type="text/javascript">
+
+
+
+
+
+
+
+			<div *ngFor="let slot of slots; let i = index">
+				<div *ngIf="items[slot.name]" data-id="10" data-type="11" [ngClass]="i < 8 || i === 17? '' : 'slot-align-right'" class="slot slot-1 item-quality-{{items[slot.name].quality}} slot-{{slot.name}}">
+
+					<div *ngIf="slot.show">
+						<div *ngIf="template && template != 0">
+							<div class="ui-tooltip tool-{{slot.name}}" style="display: block" [ngClass]="i < 8? 'topLeft' : 'topRight'">
+								<div class="tooltip-content">
+									<div [innerHTML]="template._body"></div>
+									<script>
+										$("#stat-74").remove();
+									</script>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slot-inner">
+						<div class="slot-contents">
+							<a class="item" (mouseover)="slot.show=true; getToolTip(items[slot.name])" (mouseleave)="slot.show=false; template = []"><img src="http://media.blizzard.com/wow/icons/56/{{items[slot.name].icon}}.jpg" alt="" />
+								<span class="frame"></span>
+							</a>
+							<div class="details">
+								<span class="name-shadow">{{items[slot.name].name}}</span>
+								<span class="name color-q{{items[slot.name].quality}}">
+								<span >{{items[slot.name].name}}</span>
+								</span>
+								<div *ngIf="items[slot.name].appearance.length > 0">
+									<span class="enchant-shadow">
+									Mark of Bleeding Hollow
+								</span>
+									<div class="enchant color-q2">
+										<a>Mark of Bleeding Hollow</a>
+									</div>
+								</div>
+								<span class="level">{{items[slot.name].itemLevel}}</span>
+								<div *ngIf="items[slot.name].tooltipParams">
+									<span class="sockets" *ngIf="items[slot.name].tooltipParams.gem0">
+	                                    <span class="icon-socket socket-type-7">
+                                            <a class="gem">
+				                                <img src="http://media.blizzard.com/wow/icons/18/inv_jewelcrafting_53.jpg" alt="" />
+				                                <span class="frame"></span>
+									</a>
+									<span *ngIf="!items[slot.name].tooltipParams.gem0" class="empty"></span>
+									<span *ngIf="!items[slot.name].tooltipParams.gem0" class="frame"></span>
+									</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div *ngIf="!items[slot.name]" data-id="0" data-type="1" [ngClass]="i < 8 || i === 17? '' : 'slot-align-right'" class="slot slot-{{slot.id}} slot-{{slot.name}}">
+					<div class="slot-inner">
+						<div class="slot-contents">
+							<a class="empty"><span class="frame"></span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript">
 		//<![CDATA[
 		$(document).ready(function() {
 			var summaryInventory = new Summary.Inventory({ view: "advanced" }, {
@@ -187,6 +218,6 @@
 		//]]>
 		</script>
 
-        </div>
+		</div>
 
-    </div>
+	</div>

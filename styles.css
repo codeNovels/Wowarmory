@@ -5,19 +5,19 @@
     left: 0px; top: 58px;
 }
 .slot-shoulder{
-left: 0px; top: 116px;
+    left: 0px; top: 116px;
 }
 .slot-back{
-left: 0px; top: 174px;
+    left: 0px; top: 174px;
 }
 .slot-chest{
-left: 0px; top: 232px;
+    left: 0px; top: 232px;
 }
 .slot-shirt{
-left: 0px; top: 290px;
+    left: 0px; top: 290px;
 }
 .slot-tabard{
-left: 0px; top: 348px;
+    left: 0px; top: 348px;
 }
 .slot-wrist{
     left: 0px; top: 406px;
@@ -49,5 +49,62 @@ left: 0px; top: 348px;
     left: 132.5px; bottom: 0px;
 }
 .slot-offHand{
-      left: 409.5px; bottom: 0px;
+    left: 409.5px; bottom: 0px;
 }
+
+
+.tool-head {
+    left: 55px; top: -100px;
+}
+.tool-neck{
+    left: 55px; top: -100px;
+}
+.tool-shoulder{
+    left: 55px; top: -100px;
+}
+.tool-back{
+    left: 55px; top: -100px;
+}
+.tool-chest{
+    left: 55px; top: -100px;
+}
+.tool-shirt{
+    left: 55px; top: -100px;
+}
+.tool-tabard{
+    left: 55px; top: -100px;
+}
+.tool-wrist{
+    left: 55px; top: -100px;
+}
+.tool-hands{
+    right: 55px; top: -100px;
+}
+.tool-waist{
+    right: 55px; top: -100px;
+}
+.tool-legs{
+    right: 55px; top: -100px;
+}
+.tool-feet{
+    right: 55px; top: -100px;
+}
+.tool-finger1{
+    right: 55px; top: -100px;
+}
+.tool-finger2{
+    right: 55px; top: -100px;
+}
+.tool-trinket1{
+    right: 55px; top: -100px;
+ }
+.tool-trinket2{
+    right: 55px; top: -100px;
+}
+.tool-mainHand{
+    left: 55px; top: -100px;
+}
+.tool-offHand{
+    left: 55px; top: -100px;
+}
+
