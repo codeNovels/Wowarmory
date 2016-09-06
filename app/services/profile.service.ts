@@ -12,25 +12,22 @@ export class ProfileService {
         private jsonp: Jsonp) {
     }
 
-    getItems() {
-        this.searchUrl = 'https://us.api.battle.net/wow/character/darkspear/Bajheera?fields=items&locale=en_US&apikey=4ae9q6w9g24dfage6zmjngax5xf7x4sb'
+    getItems(realm:string, character: string) {
+        this.searchUrl = 'https://us.api.battle.net/wow/character/'+realm+'/'+character+'?fields=items&locale=en_US&apikey=4ae9q6w9g24dfage6zmjngax5xf7x4sb'
         return this.http.get(this.searchUrl)
             .map(data => data.json());
     }
 
-    // getItemDetails() {
-    //     let headers = new Headers();
-    //     headers.append('Content-Type', 'application/xhtml + xml');
-    //     headers.append('Access-Control-Allow-Origin', '*');
-
-    //     this.searchUrl = 'http://us.battle.net/wow/en/item/138154/scenario-normal/tooltip'
-    //     return this.http.get(this.searchUrl, headers)
-    //         .map(data => data);
-    // }
     getItemDetails(item:any) {
         var url = 'http://us.battle.net/wow/en/item/'+item.id+'/scenario-normal/tooltip';
         return this.http.get(url)
             .map(data => data);
+    }
+
+    getSidebarDetails() {
+        this.searchUrl = 'https://us.api.battle.net/wow/character/darkspear/Bajheera?apikey=4ae9q6w9g24dfage6zmjngax5xf7x4sb'
+        return this.http.get(this.searchUrl)
+            .map(data => data.json());
     }
 
 }

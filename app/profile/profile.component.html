@@ -1,21 +1,24 @@
-<div id="content">
-    <div class="content-top body-top">
+<div id="content" *ngIf="profile">
+    <div class="content-top body-top" 
+    [style.background-image]="'url(http://us.battle.net/wow/static/images/character/summary/backgrounds/race/'+ profile.race +'.jpg)' ">
+
         <div class="content-trail"></div>
         <div class="content-bot clear">
 
-            <div id="profile-wrapper" class="profile-wrapper profile-wrapper-advanced profile-wrapper-horde profile-wrapper-light">
-
-                <profile-sidebar></profile-sidebar>
-
+            <div id="profile-wrapper" class="profile-wrapper profile-wrapper-advanced profile-wrapper-horde profile-wrapper-light"
+            [style.background-image]="'url(http://render-api-us.worldofwarcraft.com/static-render/us/'+ profile.thumbnail.replace('avatar.jpg', '') +'profilemain.jpg)'">
+                
+                <profile-sidebar [profile]="profile"></profile-sidebar>
                 <div class="profile-contents">
                     <profile-top [items]="items"></profile-top>
                     <profile-bottom></profile-bottom>
                 </div>
-
-
                 <span class="clear"><!-- --></span>
             </div>
-
         </div>
     </div>
 </div>
+
+
+
+

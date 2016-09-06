@@ -9,25 +9,35 @@ import { ProfileService } from './services/profile.service'
     providers: [ProfileService]
 })
 export class AppComponent {
-    realm: string;
-    character: string;
-    items: Array<any>;
+    public realm: string;
+    public character: string;
+    public items: Array<any>;
+    public profile: Array<any>;
+    public race: string;
+    public thumbnail: string;
 
     constructor(private profileService: ProfileService) {
 
+    }
+
+    searchCharacter() {
+        this.getInventory();
     }
 
     ngOnInit() {
         /**
          * Load the initial data.
          */
-        this.getInventory();
+        //this.getInventory();
     }
 
     getInventory() {
-        this.profileService.getItems()
+        this.profileService.getItems(this.realm, this.character)
             .subscribe(data => {
                 this.items = data.items;
+                this.profile = data;
+                this.race = data.race
+                this.thumbnail = data.thumbnail;
             })
     }
 }

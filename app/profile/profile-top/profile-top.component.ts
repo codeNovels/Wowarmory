@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProfileService } from '../../services/profile.service'
-import {Http, Headers, Jsonp} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -31,9 +30,7 @@ export class ProfileTopComponent implements OnInit {
         { id: 21, name: 'mainHand' },
         { id: 22, name: 'offHand' }]
 
-    constructor(private profileService: ProfileService,
-        private jsonp: Jsonp,
-        private http: Http) {
+    constructor(private profileService: ProfileService) {
 
     }
 
@@ -43,14 +40,6 @@ export class ProfileTopComponent implements OnInit {
                 this.template = res;
             })
     }
-
-    // public getToolTip(item: any) {
-    //     let parser = new DOMParser();
-    //     let url = 'http://us.battle.net/wow/en/item/138154/scenario-normal/tooltip?callback=JSONP_CALLBACK';
-    //     this.jsonp.get(url)
-    //               .map((res:any) =>  res = parser.parseFromString(res, 'text/html'))
-    //               .subscribe(res => this.template = res);
-    // }
 
     ngOnInit() { }
 }

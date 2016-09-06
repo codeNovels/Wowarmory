@@ -7,49 +7,20 @@
 				</a>
 			</li>
 		</ul>
-
-
-		<div class="summary-averageilvl">
+		<div class="summary-averageilvl" *ngIf="items">
 			<div class="rest" style="color: #ccc">
 				Average item level<br /> (
-				<span class="equipped">517</span> Equipped)
+				<span class="equipped">{{items.averageItemLevelEquipped}}</span> Equipped)
 			</div>
 			<div id="summary-averageilvl-best" class="best tip" data-id="averageilvl">
-				521
+				{{items.averageItemLevel}}
 			</div>
 		</div>
-
 	</div>
-
 	<div class="summary-top-inventory" *ngIf="items">
 		<div id="summary-inventory" class="summary-inventory summary-inventory-advanced">
-			<!--<div data-id="0" data-type="1" class="slot slot-1 item-quality-4" style=" left: 0px; top: 0px;">
-                    <div class="slot-inner">
-                        <div class="slot-contents">
-                            <a href="/wow/en/item/114230/trade-skill" class="item" data-item="d=99&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=227,525,534"><img src="http://media.blizzard.com/wow/icons/56/inv_plate_draenorcrafted_d_01helm.jpg" alt=""
-                                /><span class="frame"></span></a>
-
-                            <div class="details">
-                                <span class="name-shadow">Truesteel Helm of the Aurora</span>
-                                <span class="name color-q4">
-								<a href="/wow/en/item/114230/trade-skill" data-item="d=99&amp;u=529&amp;pl=100&amp;cc=13&amp;bl=227,525,534">Truesteel Helm of the Aurora</a>
-							</span>
-                                <span class="level">640</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-
-
-
-
-
-
-
-
 			<div *ngFor="let slot of slots; let i = index">
 				<div *ngIf="items[slot.name]" data-id="10" data-type="11" [ngClass]="i < 8 || i === 17? '' : 'slot-align-right'" class="slot slot-1 item-quality-{{items[slot.name].quality}} slot-{{slot.name}}">
-
 					<div *ngIf="slot.show">
 						<div *ngIf="template && template != 0">
 							<div class="ui-tooltip tool-{{slot.name}}" style="display: block" [ngClass]="i < 8? 'topLeft' : 'topRight'">
@@ -62,7 +33,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="slot-inner">
 						<div class="slot-contents">
 							<a class="item" (mouseover)="slot.show=true; getToolTip(items[slot.name])" (mouseleave)="slot.show=false; template = []"><img src="http://media.blizzard.com/wow/icons/56/{{items[slot.name].icon}}.jpg" alt="" />
@@ -106,118 +76,5 @@
 					</div>
 				</div>
 			</div>
-
-			<script type="text/javascript">
-		//<![CDATA[
-		$(document).ready(function() {
-			var summaryInventory = new Summary.Inventory({ view: "advanced" }, {
-			
-			0: {
-				name: "Truesteel Helm of the Aurora",
-				quality: 4,
-				icon: "inv_plate_draenorcrafted_d_01helm"
-			}
-			,
-			1: {
-				name: "Rumbling Mountain Choker of the Feverflare",
-				quality: 3,
-				icon: "inv_jewelry_amulet_03"
-			}
-			,
-			2: {
-				name: "Truesteel Pauldrons of the Fireflash",
-				quality: 4,
-				icon: "inv_plate_draenorcrafted_d_01shoulder"
-			}
-			,
-			14: {
-				name: "Worn Stoneskin Gargoyle Cape",
-				quality: 7,
-				icon: "inv_misc_cape_19"
-			}
-			,
-			4: {
-				name: "Truesteel Breastplate of the Feverflare",
-				quality: 4,
-				icon: "inv_plate_draenorcrafted_d_01chest"
-			}
-			,
-			3: {
-				name: "Bright Yellow Shirt",
-				quality: 2,
-				icon: "inv_shirt_yellow_01"
-			}
-			,
-			18: {
-				name: "Tabard of the Guardians of Hyjal",
-				quality: 2,
-				icon: "inv_misc_tabard_guardiansofhyjal"
-			}
-			,
-			8: {
-				name: "Cliffbreaker Vambraces of the Savant",
-				quality: 4,
-				icon: "inv_bracer_plate_reputation_c_01"
-			}
-			,
-			9: {
-				name: "Partycrasher\'s Gauntlets",
-				quality: 3,
-				icon: "inv_glove_plate_panda_b_01"
-			}
-			,
-			5: {
-				name: "Felbane Girdle of the Aurora",
-				quality: 3,
-				icon: "inv_plate_draenorlfr_c_01belt"
-			}
-			,
-			6: {
-				name: "Cliffbreaker Legplates of the Impatient",
-				quality: 4,
-				icon: "inv_pants_plate_reputation_c_01"
-			}
-			,
-			7: {
-				name: "Cliffbreaker Sabatons of the Impatient",
-				quality: 4,
-				icon: "inv_boot_plate_reputation_c_01"
-			}
-			,
-			10: {
-				name: "Ring of Torn Flesh",
-				quality: 4,
-				icon: "inv_jewelry_ring_ahnqiraj_06"
-			}
-			,
-			11: {
-				name: "Seal of the Petrified Pumpkin",
-				quality: 4,
-				icon: "inv_misc_bag_28_halloween"
-			}
-			,
-			12: {
-				name: "Swift Hand of Justice",
-				quality: 7,
-				icon: "inv_jewelry_talisman_01"
-			}
-			,
-			13: {
-				name: "Touch of the Void",
-				quality: 7,
-				icon: "spell_priest_voidtendrils"
-			}
-			,
-			15: {
-				name: "Blazegrease Greatsword",
-				quality: 3,
-				icon: "inv_sword_2h_draenorquest95_b_01"
-			}
-			});
-		});
-		//]]>
-		</script>
-
 		</div>
-
 	</div>

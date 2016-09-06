@@ -6,11 +6,14 @@
         <div class="search-bar">
             <form action="/wow/en/search" method="get" autocomplete="off">
                 <div>
-                    <div class="ui-typeahead-ghost"><input type="text" value="" autocomplete="off" readonly="readonly" class="search-field input input-ghost"
-                        />
-                        <input type="search" [(ngModel)]="realm" class="search-field input" name="q" id="search-field" maxlength="200" tabindex="40"
-                            alt="Search characters, items, forums and more…" placeholder="Search characters..." /></div>
-                    <input type="submit" class="search-button" value="" tabindex="41" />
+                    <input type="search" [(ngModel)]="character"  name="c" id="search-field" maxlength="200" tabindex="40"
+                            alt="Search characters" placeholder="Search characters..." />
+                            
+                    <div class="ui-typeahead-ghost"><input type="text" value="" autocomplete="off" readonly="readonly" class="search-field input input-ghost">
+                        <input type="search" [(ngModel)]="realm" class="search-field input" name="r" id="search-field" maxlength="200" tabindex="40"
+                            alt="Search characters" placeholder="Search characters..." />
+                        </div>
+                    <input type="submit" (click)="searchCharacter()" class="search-button" value="" tabindex="41" />
                 </div>
             </form>
         </div>
@@ -28,7 +31,8 @@
 
 
 
-
-    <profile-component [items]="items"></profile-component>
+    <div  *ngIf="profile">
+    <profile-component [items]="items" [profile]="profile" [race]="race"></profile-component>
     <footer-component></footer-component>
+    </div>
 </div>
