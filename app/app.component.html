@@ -3,19 +3,22 @@
 <div id="wrapper">
     <!--<header-component></header-component>-->
     <div id="header">
-        <div class="search-bar">
+        <div class="search-bar" style="margin-top: -7px">
             <form action="/wow/en/search" method="get" autocomplete="off">
                 <div>
-                    <input type="search" [(ngModel)]="character"  name="c" id="search-field" maxlength="200" tabindex="40"
-                            alt="Search characters" placeholder="Search characters..." />
-                            
+                    <input type="search" [(ngModel)]="realm" class="search-field input"  name="c" id="search-field" maxlength="200" tabindex="40"
+                            alt="Search characters" placeholder="Server Name..." style="margin-bottom:3px" />
+                            <br>
                     <div class="ui-typeahead-ghost"><input type="text" value="" autocomplete="off" readonly="readonly" class="search-field input input-ghost">
-                        <input type="search" [(ngModel)]="realm" class="search-field input" name="r" id="search-field" maxlength="200" tabindex="40"
-                            alt="Search characters" placeholder="Search characters..." />
+                        <input type="search" [(ngModel)]="character" class="search-field input" name="r" id="search-field" maxlength="200" tabindex="40"
+                            alt="Search characters" placeholder="Character Name..." />
                         </div>
-                    <input type="submit" (click)="searchCharacter()" class="search-button" value="" tabindex="41" />
+                    <input type="submit" (click)="searchCharacter()" class="search-button" value="" tabindex="41" style="margin-top: 1rem;" />
                 </div>
             </form>
+            <br>
+            <br>
+            <br>
         </div>
         <h1 id="logo"><a href="/wow/en/">World of Warcraft®</a></h1>
         <div class="new-feature-tip" id="feature-tip" style="display: none">
@@ -32,7 +35,7 @@
 
 
     <div  *ngIf="profile">
-    <profile-component [items]="items" [profile]="profile" [race]="race"></profile-component>
+    <profile-component [items]="items" [profile]="profile"></profile-component>
     <footer-component></footer-component>
     </div>
 </div>

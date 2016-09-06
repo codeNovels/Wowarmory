@@ -1,13 +1,10 @@
 <div id="content" *ngIf="profile">
-    <div class="content-top body-top" 
+    <div class="content-top body-top" *ngIf="profile.class !==6" 
     [style.background-image]="'url(http://us.battle.net/wow/static/images/character/summary/backgrounds/race/'+ profile.race +'.jpg)' ">
-
         <div class="content-trail"></div>
         <div class="content-bot clear">
-
-            <div id="profile-wrapper" class="profile-wrapper profile-wrapper-advanced profile-wrapper-horde profile-wrapper-light"
+            <div id="profile-wrapper" class="profile-wrapper profile-wrapper-advanced profile-wrapper-{{profile.faction === 1? 'horde': 'alliance'}} profile-wrapper-light"
             [style.background-image]="'url(http://render-api-us.worldofwarcraft.com/static-render/us/'+ profile.thumbnail.replace('avatar.jpg', '') +'profilemain.jpg)'">
-                
                 <profile-sidebar [profile]="profile"></profile-sidebar>
                 <div class="profile-contents">
                     <profile-top [items]="items"></profile-top>
@@ -17,6 +14,23 @@
             </div>
         </div>
     </div>
+
+    <div class="content-top body-top" *ngIf="profile.class ===6" 
+    [style.background-image]="'url(http://us.battle.net/wow/static/images/character/summary/backgrounds/class/'+ profile.class +'.jpg)' ">
+        <div class="content-trail"></div>
+        <div class="content-bot clear">
+            <div id="profile-wrapper" class="profile-wrapper profile-wrapper-advanced profile-wrapper-{{profile.faction === 1? 'horde': 'alliance'}} profile-wrapper-light"
+            [style.background-image]="'url(http://render-api-us.worldofwarcraft.com/static-render/us/'+ profile.thumbnail.replace('avatar.jpg', '') +'profilemain.jpg?alt=/wow/static/images/2d/profilemain/class/6-'+ profile.gender +'.jpg)'">
+                <profile-sidebar [profile]="profile"></profile-sidebar>
+                <div class="profile-contents">
+                    <profile-top [items]="items"></profile-top>
+                    <profile-bottom></profile-bottom>
+                </div>
+                <span class="clear"><!-- --></span>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 

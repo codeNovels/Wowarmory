@@ -13,7 +13,7 @@ export class ProfileService {
     }
 
     getItems(realm:string, character: string) {
-        this.searchUrl = 'https://us.api.battle.net/wow/character/'+realm+'/'+character+'?fields=items&locale=en_US&apikey=4ae9q6w9g24dfage6zmjngax5xf7x4sb'
+        this.searchUrl = 'https://us.api.battle.net/wow/character/'+realm+'/'+character+'?fields=items%2C+talents%2C+guild%2C+titles&locale=en_US&apikey=4ae9q6w9g24dfage6zmjngax5xf7x4sb'
         return this.http.get(this.searchUrl)
             .map(data => data.json());
     }

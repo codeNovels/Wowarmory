@@ -9,7 +9,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileSidebarComponent implements OnInit {
     @Input() profile: Array<any>;
-
     
     constructor() { }
 

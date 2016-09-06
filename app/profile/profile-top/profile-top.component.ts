@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProfileService } from '../../services/profile.service'
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -30,7 +31,8 @@ export class ProfileTopComponent implements OnInit {
         { id: 21, name: 'mainHand' },
         { id: 22, name: 'offHand' }]
 
-    constructor(private profileService: ProfileService) {
+    constructor(private profileService: ProfileService,
+                private sanitationService:DomSanitizer) {
 
     }
 
@@ -38,6 +40,7 @@ export class ProfileTopComponent implements OnInit {
         this.profileService.getItemDetails(item)
             .subscribe(res => {
                 this.template = res;
+                this.sanitationService.bypassSecurityTrustHtml(this.template._body);
             })
     }
 

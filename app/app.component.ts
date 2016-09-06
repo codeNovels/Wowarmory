@@ -13,8 +13,6 @@ export class AppComponent {
     public character: string;
     public items: Array<any>;
     public profile: Array<any>;
-    public race: string;
-    public thumbnail: string;
 
     constructor(private profileService: ProfileService) {
 
@@ -36,8 +34,8 @@ export class AppComponent {
             .subscribe(data => {
                 this.items = data.items;
                 this.profile = data;
-                this.race = data.race
-                this.thumbnail = data.thumbnail;
+                this.realm = '';
+                this.character = '';
             })
     }
 }
