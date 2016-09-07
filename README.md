@@ -4,4 +4,8 @@ HTML - Modified to work with Angular 2
 <br>
 Javascript - Using Angular 2 rc5
 
-![Picture](https://github.com/codeNovels/Wowarmory/blob/master/images/ReadMe.PNG)
+![Picture](https://github.com/codeNovels/Wowarmory/blob/master/images/DemonHunter.PNG)
+
+<br>
+
+![Picture](https://github.com/codeNovels/Wowarmory/blob/master/images/Warrior.PNG)
