@@ -25,10 +25,7 @@
 						<div *ngIf="template && template != 0">
 							<div class="ui-tooltip tool-{{slot.name}}" style="display: block" [ngClass]="i < 8? 'topLeft' : 'topRight'">
 								<div class="tooltip-content">
-									<div [innerHTML]="template._body"></div>
-									<script>
-										$("#stat-74").remove();
-									</script>
+									<div [innerHTML]="template"></div>
 								</div>
 							</div>
 						</div>

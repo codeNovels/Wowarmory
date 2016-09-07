@@ -12,6 +12,7 @@ import 'rxjs/add/operator/map';
 export class ProfileTopComponent implements OnInit {
     @Input() items: Array<any>;
     template: any;
+    tooltip: any;
     slots: Array<any> = [{ id: 1, name: 'head' },
         { id: 2, name: 'neck' },
         { id: 3, name: 'shoulder' },
@@ -39,8 +40,15 @@ export class ProfileTopComponent implements OnInit {
     public getToolTip(item: any) {
         this.profileService.getItemDetails(item)
             .subscribe(res => {
-                this.template = res;
-                this.sanitationService.bypassSecurityTrustHtml(this.template._body);
+                this.tooltip = res;
+                this.template = this.tooltip._body
+
+                this.template = this.template.replace("icon-frame", "")
+                
+               // this.template = this.template.repalce("style=\"background-image\",\"[style.background-image]=")
+
+
+                this.sanitationService.bypassSecurityTrustHtml(this.template);
             })
     }
 

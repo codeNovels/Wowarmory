@@ -9,8 +9,8 @@ import { ProfileService } from './services/profile.service'
     providers: [ProfileService]
 })
 export class AppComponent {
-    public realm: string;
-    public character: string;
+    public realm: string = 'Akama';
+    public character: string = 'Twins';
     public items: Array<any>;
     public profile: Array<any>;
 
@@ -23,10 +23,7 @@ export class AppComponent {
     }
 
     ngOnInit() {
-        /**
-         * Load the initial data.
-         */
-        //this.getInventory();
+        this.getInventory();
     }
 
     getInventory() {

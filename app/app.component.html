@@ -4,7 +4,7 @@
     <!--<header-component></header-component>-->
     <div id="header">
         <div class="search-bar" style="margin-top: -7px">
-            <form action="/wow/en/search" method="get" autocomplete="off">
+            <form method="get" autocomplete="off">
                 <div>
                     <input type="search" [(ngModel)]="realm" class="search-field input"  name="c" id="search-field" maxlength="200" tabindex="40"
                             alt="Search characters" placeholder="Server Name..." style="margin-bottom:3px" />
@@ -20,9 +20,9 @@
             <br>
             <br>
         </div>
-        <h1 id="logo"><a href="/wow/en/">World of Warcraft®</a></h1>
+        <h1 id="logo"><a>World of Warcraft®</a></h1>
         <div class="new-feature-tip" id="feature-tip" style="display: none">
-            <a href="/wow/en/zone/" data-label="World of Warcraft Game Guide" class="clickable">
+            <a data-label="World of Warcraft Game Guide" class="clickable">
                 <span class="title">FEATURE UPDATED!</span>
                 <strong>Scenarios </strong>
                 <span class="desc">Check out our new guide pages with detailed information about the new Mists of Pandaria scenarios!</span>
@@ -34,8 +34,8 @@
 
 
 
-    <div  *ngIf="profile">
-    <profile-component [items]="items" [profile]="profile"></profile-component>
-    <footer-component></footer-component>
+    <div *ngIf="profile">
+        <profile-component [items]="items" [profile]="profile"></profile-component>
+        <footer-component></footer-component>
     </div>
 </div>

@@ -5,7 +5,7 @@
 
                 <div class="profile-info-anchor">
                     <div class="profile-info" *ngIf="profile">
-                        <div class="name"><a href="/wow/en/character/uther/Swifty/" rel="np">{{profile.name}}</a></div>
+                        <div class="name"><a>{{profile.name}}</a></div>
                         <div class="title-guild">
                             <div class="title" *ngIf="profile.titles">
                                 <div *ngFor="let title of profile.titles">
@@ -13,121 +13,59 @@
                                         {{title.name.replace('%s','')}}
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                             <div class="guild" *ngIf="profile.guild">
-                                <a href="/wow/en/guild/uther/Consumed_by_Hatred/?character=swifty">{{profile.guild.name}}</a>
+                                <a>{{profile.guild.name}}</a>
                             </div>
                         </div>
                         <span class="clear"><!-- --></span>
-                        <div class="under-name color-c2">
+                        <div class="under-name color-c{{profile.class}}">
                             <span class="level"><strong>{{profile.level}}</strong>
                             </span>
-
-                            <a class="race">Blood Elf</a>
-
-                            <span *ngIf="profile.talents">
-                                                <span *ngFor="let talent of profile.talents">
-                                                    <span *ngIf="talent.selected">
-                                                <a id="profile-info-spec" href="#talents" class="spec tip">{{talent.spec.name}}</a>
-                                                </span>
-                                                </span>
+                            <span *ngFor="let race of races">
+                                <span *ngIf="race.id === profile.race">
+                                    <span class="race">{{race.name}}</span>
+                                </span>
                             </span>
-                            <a href="/wow/en/game/class/paladin" class="class">Paladin</a><span class="comma">,</span>
-                            <span class="realm tip" id="profile-info-realm" data-battlegroup="Vengeance">
-						{{profile.realm}}
-					</span>
+                            <span *ngIf="profile.talents">
+                                  <span *ngFor="let talent of profile.talents">
+                                       <span *ngIf="talent.selected">
+                                            <a id="profile-info-spec">{{talent.spec.name}}</a>
+                                       </span>
+                                </span>
+                            </span>
+                            <span *ngFor="let class of classes">
+                                <span *ngIf="class.id === profile.class">
+                                    <a class="class">{{class.name}}</a><span class="comma">,</span>
+                                </span>
+                            </span>
+                            <span id="profile-info-realm" data-battlegroup="Vengeance">
+						        {{profile.realm}}
+					        </span>
                         </div>
-                        <div class="achievements"><a href="/wow/en/character/uther/Swifty/achievement">{{profile.achievementPoints}}</a></div>
+                        <div class="achievements"><a>{{profile.achievementPoints}}</a></div>
                     </div>
                 </div>
+
+
+
+
                 <ul class="profile-sidebar-menu" id="profile-sidebar-menu">
                     <li class=" active">
-                        <a href="/wow/en/character/uther/Swifty/" class="" rel="np">
+                        <a class="" >
                             <span class="arrow"><span class="icon">
-				Summary
-			</span></span>
+				                Summary
+			                </span></span>
                         </a>
                     </li>
-                    <li class=" disabled">
-                        <a href="javascript:;" class=" has-submenu vault" rel="np">
+                    <li class=" disabled" *ngFor="let menu of menus">
+                        <a class="vault">
                             <span class="arrow"><span class="icon">
-				Auctions
-			</span></span>
-                        </a>
-                    </li>
-                    <li class=" disabled">
-                        <a href="javascript:;" class=" vault" rel="np">
-                            <span class="arrow"><span class="icon">
-				Events
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/wow/en/character/uther/Swifty/achievement" class=" has-submenu" rel="np">
-                            <span class="arrow"><span class="icon">
-				Achievements
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/wow/en/character/uther/Swifty/challenge" class="" rel="np">
-                            <span class="arrow"><span class="icon">
-				Challenge Mode
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/wow/en/character/uther/Swifty/pet" class="" rel="np">
-                            <span class="arrow"><span class="icon">
-				Pets &amp; Mounts
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/wow/en/character/uther/Swifty/profession/" class=" has-submenu" rel="np">
-                            <span class="arrow"><span class="icon">
-				Professions
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/wow/en/character/uther/Swifty/reputation/" class="" rel="np">
-                            <span class="arrow"><span class="icon">
-				Reputation
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/wow/en/character/uther/Swifty/pvp" class="" rel="np">
-                            <span class="arrow"><span class="icon">
-				PvP
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-
-                        <a href="/wow/en/character/uther/Swifty/feed" class="" rel="np">
-                            <span class="arrow"><span class="icon">
-				Activity Feed
-			</span></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/wow/en/guild/uther/Consumed_by_Hatred/?character=swifty" class=" has-submenu" rel="np">
-                            <span class="arrow"><span class="icon">
-				Guild
-			</span></span>
+				                {{menu}}
+			                </span></span>
                         </a>
                     </li>
                 </ul>
-                <div class="summary-sidebar-links">
-                    <span class="summary-sidebar-button">
-									<a href="javascript:;" id="summary-link-tools" class="summary-link-tools"></a>
-								</span>
-                    <span class="summary-sidebar-button">
-	                                    <a href="javascript:;" data-fansite="character|US|Swifty|uther" class="fansite-link "> </a>
-									</span>
-                </div>
             </div>
         </div>
     </div>
